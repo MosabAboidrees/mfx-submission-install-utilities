@@ -15,12 +15,12 @@ function AddSubmissionContents(name)
 	disp('--- Adding submission contents to path')
 	disp(' ')
 
-    % current file
+	% current file
 	fullfuncdir = which(name);
-    
-    % current folder 
+
+	% current folder 
 	submissiondir = fullfile(fileparts(fullfuncdir));
-    
-    % add folders and subfolders to path
+
+	% add folders and subfolders to path
 	addpath(genpath(submissiondir)) 
 end

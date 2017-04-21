@@ -1,7 +1,6 @@
 %--------------------------------------------------------------------------
 % CloseThisFile
-% This function closes the file name if it is open in the editor.
-% Most commonly used to close the INSTALL file when it has completed.
+% Closes the specified file
 %--------------------------------------------------------------------------
 % Should be directly included as a subfunction in the INSTALL file
 %--------------------------------------------------------------------------
@@ -10,12 +9,12 @@
 % https://github.com/danielrherber/mfx-submission-install-utilities
 %--------------------------------------------------------------------------
 function CloseThisFile(name)
-	disp(['--- Closing ', name])
-	disp(' ')
-    
+    disp(['--- Closing ', name])
+    disp(' ')
+
     % get editor information
     h = matlab.desktop.editor.getAll;
-    
+
     % go through all open files in the editor
     for k = 1:numel(h)
         % check if this is the file

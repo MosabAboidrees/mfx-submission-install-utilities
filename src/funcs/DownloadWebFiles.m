@@ -1,6 +1,6 @@
 %--------------------------------------------------------------------------
 % DownloadWebFiles
-% 
+% Downloads web files to a specified output directory
 %--------------------------------------------------------------------------
 % Should be directly included as a subfunction in the INSTALL file
 %--------------------------------------------------------------------------

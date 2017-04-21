@@ -1,6 +1,6 @@
 %--------------------------------------------------------------------------
 % OpenThisFile
-% 
+% Opens the specified file
 %--------------------------------------------------------------------------
 % Should be directly included as a subfunction in the INSTALL file
 %--------------------------------------------------------------------------
@@ -11,12 +11,12 @@
 function OpenThisFile(name)
 	disp(['--- Opening ', name])
 
-    try
-        % open the file
-        open(name);
-    catch % error
-        disp(['Could not open ', name])
-    end
-    
+	try
+	    % open the file
+	    open(name);
+	catch % error
+	    disp(['Could not open ', name])
+	end
+
 	disp(' ')
 end

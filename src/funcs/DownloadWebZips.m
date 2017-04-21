@@ -1,6 +1,6 @@
 %--------------------------------------------------------------------------
 % DownloadWebZips
-% 
+% Downloads web zips to a specified output directory
 %--------------------------------------------------------------------------
 % Should be directly included as a subfunction in the INSTALL file
 %--------------------------------------------------------------------------

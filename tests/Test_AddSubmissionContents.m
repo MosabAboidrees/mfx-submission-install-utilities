@@ -2,6 +2,8 @@
 % Test_AddSubmissionContents
 % Testing function for AddSubmissionContents
 %--------------------------------------------------------------------------
+% 
+%--------------------------------------------------------------------------
 % Primary Contributor: Daniel R. Herber, Graduate Student, University of 
 % Illinois at Urbana-Champaign
 % Link: https://github.com/danielrherber/mfx-submission-install-utilities

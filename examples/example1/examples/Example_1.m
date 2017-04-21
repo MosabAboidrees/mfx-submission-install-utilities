@@ -1,7 +1,14 @@
-
-% requires
-
-
+%--------------------------------------------------------------------------
+% Example_1
+% Test function that creates a plot and save the figure using requiring:
+% 1) GitHub project 2) MFX submission 3) web-based m file
+%--------------------------------------------------------------------------
+% 
+%--------------------------------------------------------------------------
+% Primary Contributor: Daniel R. Herber, Graduate Student, University of 
+% Illinois at Urbana-Champaign
+% Link: https://github.com/danielrherber/mfx-submission-install-utilities
+%--------------------------------------------------------------------------
 % data
 [X,Y,Z] = peaks;
 % data variables

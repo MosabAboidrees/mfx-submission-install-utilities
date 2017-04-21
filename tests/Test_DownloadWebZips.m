@@ -2,6 +2,8 @@
 % Test_DownloadWebZips
 % Testing function for DownloadWebZips
 %--------------------------------------------------------------------------
+% 
+%--------------------------------------------------------------------------
 % Primary Contributor: Daniel R. Herber, Graduate Student, University of 
 % Illinois at Urbana-Champaign
 % Link: https://github.com/danielrherber/mfx-submission-install-utilities
@@ -25,7 +27,6 @@ try
 catch
     disp('might be some remaining files')
 end
-
 
 % normal (multiple zips)
 zips(1).url = 'https://github.com/altmany/export_fig/archive/master.zip';

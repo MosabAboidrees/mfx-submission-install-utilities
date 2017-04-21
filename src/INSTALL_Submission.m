@@ -1,5 +1,7 @@
 %--------------------------------------------------------------------------
 % INSTALL_Submission
+% INSTALL file template
+%--------------------------------------------------------------------------
 % 
 %--------------------------------------------------------------------------
 % Primary Contributor: Daniel R. Herber, Graduate Student, University of 
@@ -8,108 +10,108 @@
 %--------------------------------------------------------------------------
 function INSTALL_Submission
 
-	% add contents to path
-	AddSubmissionContents(mfilename)
+    % add contents to path
+    AddSubmissionContents(mfilename)
 
-	% download required web files
-	RequiredWebFiles
-    
+    % download required web files
+    RequiredWebFiles
+
     % download required web zips
     RequiredWebZips
 
-	% add contents to path (files have been downloaded)
-	AddSubmissionContents(mfilename)
+    % add contents to path (files have been downloaded)
+    AddSubmissionContents(mfilename)
 
-	% Open examples
-	OpenThisFile(' ') % example 1
+    % Open examples
+    OpenThisFile(' ') % example 1
     OpenThisFile(' ') % example 2
 
-	% Close this file
-	CloseThisFile(mfilename) % this will close this file
+    % Close this file
+    CloseThisFile(mfilename) % this will close this file
 
 end
 %--------------------------------------------------------------------------
 function RequiredWebFiles
-	disp('--- Obtaining required web files')
+    disp('--- Obtaining required web files')
 
     % initialize index
     ind = 0;
-    
+
     % initialize structure
     files = struct('url','','folder','');
-    
+
     % file 1
-% 	ind = ind + 1; % increment
-% 	files(ind).url = '';
-% 	files(ind).folder = '';
+%   ind = ind + 1; % increment
+%   files(ind).url = '';
+%   files(ind).folder = '';
     
     % file 2
 %   ind = ind + 1; % increment
-% 	files(ind).url = '';
-% 	files(ind).folder = '';
+%   files(ind).url = '';
+%   files(ind).folder = '';
     
-	% obtain full function path
-	full_fun_path = which(mfilename('fullpath'));
-	outputdir = fullfile(fileparts(full_fun_path),'include');
+    % obtain full function path
+    full_fun_path = which(mfilename('fullpath'));
+    outputdir = fullfile(fileparts(full_fun_path),'include');
 
-	% download
-	DownloadWebFiles(files,outputdir)
-    
+    % download
+    DownloadWebFiles(files,outputdir)
+
     disp(' ')
 end
 %--------------------------------------------------------------------------
 function RequiredWebZips
-	disp('--- Obtaining required web zips')
+    disp('--- Obtaining required web zips')
 
     % initialize index
-	ind = 0;
+    ind = 0;
 
     % initialize structure
     zips = struct('url','','folder','','test','');
-    
+
     % zip 1
-% 	ind = ind + 1; % increment
-% 	zips(ind).url = '';
-% 	zips(ind).name = '';
-% 	zips(ind).test = '';
+%   ind = ind + 1; % increment
+%   zips(ind).url = '';
+%   zips(ind).name = '';
+%   zips(ind).test = '';
 
     % zip 2
-% 	ind = ind + 1; % increment
-% 	zips(ind).url = '';
-% 	zips(ind).name = '';
-% 	zips(ind).test = '';
+%   ind = ind + 1; % increment
+%   zips(ind).url = '';
+%   zips(ind).name = '';
+%   zips(ind).test = '';
 
-	% obtain full function path
-	full_fun_path = which(mfilename('fullpath'));
-	outputdir = fullfile(fileparts(full_fun_path),'include');
+    % obtain full function path
+    full_fun_path = which(mfilename('fullpath'));
+    outputdir = fullfile(fileparts(full_fun_path),'include');
 
-	% download and unzip
-	DownloadWebZips(zips,outputdir)
+    % download and unzip
+    DownloadWebZips(zips,outputdir)
 
-	disp(' ')
+    disp(' ')
 end
 %--------------------------------------------------------------------------
 function AddSubmissionContents(name)
-	disp('--- Adding submission contents to path')
-	disp(' ')
+    disp('--- Adding submission contents to path')
+    disp(' ')
 
     % current file
-	fullfuncdir = which(name);
-    
+    fullfuncdir = which(name);
+
     % current folder 
-	submissiondir = fullfile(fileparts(fullfuncdir));
-    
+    submissiondir = fullfile(fileparts(fullfuncdir));
+
     % add folders and subfolders to path
-	addpath(genpath(submissiondir)) 
+    addpath(genpath(submissiondir)) 
 end
 %--------------------------------------------------------------------------
 function CloseThisFile(name)
-	disp(['--- Closing ', name])
-	disp(' ')
-    
+    disp(['--- Closing ', name])
+    disp(' ')
+
     % get editor information
     h = matlab.desktop.editor.getAll;
-    
+
     % go through all open files in the editor
     for k = 1:numel(h)
         % check if this is the file
@@ -121,7 +123,7 @@ function CloseThisFile(name)
 end
 %--------------------------------------------------------------------------
 function OpenThisFile(name)
-	disp(['--- Opening ', name])
+    disp(['--- Opening ', name])
 
     try
         % open the file
@@ -129,8 +131,8 @@ function OpenThisFile(name)
     catch % error
         disp(['Could not open ', name])
     end
-    
-	disp(' ')
+
+    disp(' ')
 end
 %--------------------------------------------------------------------------
 function DownloadWebFiles(files,outputdir)

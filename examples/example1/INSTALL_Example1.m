@@ -1,6 +1,8 @@
 %--------------------------------------------------------------------------
 % INSTALL_Submission
-% Install script for Example 1
+% INSTALL file for Example 1
+%--------------------------------------------------------------------------
+% 
 %--------------------------------------------------------------------------
 % Primary Contributor: Daniel R. Herber, Graduate Student, University of 
 % Illinois at Urbana-Champaign
@@ -8,102 +10,102 @@
 %--------------------------------------------------------------------------
 function INSTALL_Example1
 
-	% add contents to path
-	AddSubmissionContents(mfilename)
+    % add contents to path
+    AddSubmissionContents(mfilename)
 
-	% download required web files
-	RequiredWebFiles
-    
+    % download required web files
+    RequiredWebFiles
+
     % download required web zips
     RequiredWebZips
 
-	% add contents to path (files have been downloaded)
-	AddSubmissionContents(mfilename)
+    % add contents to path (files have been downloaded)
+    AddSubmissionContents(mfilename)
 
-	% Open an example
-	OpenThisFile('Example_1')
+    % Open an example
+    OpenThisFile('Example_1')
 
-	% Close this file
-	CloseThisFile(mfilename) % this will close this file
+    % Close this file
+    CloseThisFile(mfilename) % this will close this file
 
 end
 %--------------------------------------------------------------------------
 function RequiredWebFiles
-	disp('--- Obtaining required web files')
+    disp('--- Obtaining required web files')
 
     % initialize index
     ind = 0;
-    
+
     % initialize structure
     files = struct('url','','folder','');
-    
-    % file 1
-	ind = ind + 1; % increment
-	files(ind).url = 'http://www.danielherber.com/img/projects/mfx-submission-install-utilities/ExportFigSave.m';
-	files(ind).folder = 'ExportFigSave';
-        
-	% obtain full function path
-	full_fun_path = which(mfilename('fullpath'));
-	outputdir = fullfile(fileparts(full_fun_path),'include');
 
-	% download
-	DownloadWebFiles(files,outputdir)
-    
+    % file 1
+    ind = ind + 1; % increment
+    files(ind).url = 'http://www.danielherber.com/img/projects/mfx-submission-install-utilities/ExportFigSave.m';
+    files(ind).folder = 'ExportFigSave';
+        
+    % obtain full function path
+    full_fun_path = which(mfilename('fullpath'));
+    outputdir = fullfile(fileparts(full_fun_path),'include');
+
+    % download
+    DownloadWebFiles(files,outputdir)
+
     disp(' ')
 end
 %--------------------------------------------------------------------------
 function RequiredWebZips
-	disp('--- Obtaining required web zips')
+    disp('--- Obtaining required web zips')
 
     % initialize index
-	ind = 0;
+    ind = 0;
 
     % initialize structure
     zips = struct('url','','folder','','test','');
-    
+
     % zip 1
-	ind = ind + 1; % increment
-	zips(ind).url = 'https://github.com/altmany/export_fig/archive/master.zip';
-	zips(ind).folder = 'MFX 23629';
-	zips(ind).test = 'export_fig';
+    ind = ind + 1; % increment
+    zips(ind).url = 'https://github.com/altmany/export_fig/archive/master.zip';
+    zips(ind).folder = 'MFX 23629';
+    zips(ind).test = 'export_fig';
 
     % zip 2
-	ind = ind + 1; % increment
-	zips(ind).url = 'https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/40397/versions/7/download/zip/mfoldername_v2.zip';
-	zips(ind).folder = 'MFX 40397';
-	zips(ind).test = 'mfoldername';
+    ind = ind + 1; % increment
+    zips(ind).url = 'https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/submissions/40397/versions/7/download/zip/mfoldername_v2.zip';
+    zips(ind).folder = 'MFX 40397';
+    zips(ind).test = 'mfoldername';
 
-	% obtain full function path
-	full_fun_path = which(mfilename('fullpath'));
-	outputdir = fullfile(fileparts(full_fun_path),'include');
+    % obtain full function path
+    full_fun_path = which(mfilename('fullpath'));
+    outputdir = fullfile(fileparts(full_fun_path),'include');
 
-	% download and unzip
-	DownloadWebZips(zips,outputdir)
+    % download and unzip
+    DownloadWebZips(zips,outputdir)
 
-	disp(' ')
+    disp(' ')
 end
 %--------------------------------------------------------------------------
 function AddSubmissionContents(name)
-	disp('--- Adding submission contents to path')
-	disp(' ')
+    disp('--- Adding submission contents to path')
+    disp(' ')
 
     % current file
-	fullfuncdir = which(name);
-    
+    fullfuncdir = which(name);
+
     % current folder 
-	submissiondir = fullfile(fileparts(fullfuncdir));
-    
+    submissiondir = fullfile(fileparts(fullfuncdir));
+
     % add folders and subfolders to path
-	addpath(genpath(submissiondir)) 
+    addpath(genpath(submissiondir)) 
 end
 %--------------------------------------------------------------------------
 function CloseThisFile(name)
-	disp(['--- Closing ', name])
-	disp(' ')
-    
+    disp(['--- Closing ', name])
+    disp(' ')
+
     % get editor information
     h = matlab.desktop.editor.getAll;
-    
+
     % go through all open files in the editor
     for k = 1:numel(h)
         % check if this is the file
@@ -115,7 +117,7 @@ function CloseThisFile(name)
 end
 %--------------------------------------------------------------------------
 function OpenThisFile(name)
-	disp(['--- Opening ', name])
+    disp(['--- Opening ', name])
 
     try
         % open the file
@@ -123,8 +125,8 @@ function OpenThisFile(name)
     catch % error
         disp(['Could not open ', name])
     end
-    
-	disp(' ')
+
+    disp(' ')
 end
 %--------------------------------------------------------------------------
 function DownloadWebFiles(files,outputdir)

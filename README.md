@@ -24,10 +24,10 @@ Create straightforward, easy to use INSTALL files for your MATLAB project with t
 
 ---
 ## Functionality
-The goal of this project is to make it as simple as possible for a user to get your project code up and running. This means automating adding the files to your path, downloading dependencies from the web, opening specific files, and closing the INSTALL file when it has completed. Since no two projects are the same, the INSTALL file can be customized.
+The goal of this project is to make it as simple as possible for a user to get your project code up and running. This means automating adding the files to your path, downloading dependencies from the web, opening specific files, closing the INSTALL file when it has completed, and displaying diagnostic information to the command window. All utilities are directly included in the INSTALL file so a user only needs to worry about adding the single file to their path. Since no two projects are the same, the INSTALL file can be customized.
 
 ### Included Utilities
-Below is a list of the included utilities. This functions should be directly included  as a subfunction in the INSTALL file.
+Below is a list of the included utilities. This functions are directly included as subfunctions in the INSTALL file.
 - [AddSubmissionContents](src/funcs/AddSubmissionContents.m): Adds all the contents of the current folder and subfolders relative to the file the function is called from
 - [OpenThisFile](src/funcs/OpenThisFile.m): Opens a specified m file
 - [CloseThisFile](src/funcs/CloseThisFile.m): Closes a specified m file
@@ -37,13 +37,22 @@ Below is a list of the included utilities. This functions should be directly inc
 
 ### Custom INSTALL tasks
 
-- Check if your Python environment and packages are installed and working (see [link()])
+- Check if your Python environment and packages are installed and working (see [link](https://github.com/danielrherber/pm-architectures-project/blob/master/INSTALL_PM_Architectures_Project.m))
 - [TODO] Check to make sure the version of MATLAB is appropriate
 - [TODO] Check if the required toolboxes are installed
 - [TODO] Run a specific file
 
 ---
 ## Similar Projects
+
+There are a number of projects with similar goals to this one. These include:
+- [matlab-package-manager](https://github.com/mobeets/mpm): downloads zip files (including on MFX and GitHub)
+- [github-sync-matlab](https://github.com/drbenvincent/github-sync-matlab): downloads or updates GitHub repositories
+- [buildFexLibrary](https://github.com/sky-s/buildFexLibrary): downloads MFX submissions
+- [require-fex-package](https://www.mathworks.com/matlabcentral/fileexchange/31069): downloads MFX submissions
+- [matlab-library-system](https://github.com/tiborsimon/matlab-library-system): general install system
+
+Perhaps future versions could include some of these efforts to improve certain elements (such as better MFX and GitHub downloading).
 
 ---
 ## General Information
