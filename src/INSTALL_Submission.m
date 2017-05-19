@@ -18,15 +18,22 @@ function INSTALL_Submission
 
     % download required web zips
     RequiredWebZips
+    
+    % toolbox version checks
+    MinimumVersionChecks
 
     % add contents to path (files have been downloaded)
     AddSubmissionContents(mfilename)
 
-    % Open examples
+    % open examples
     OpenThisFile(' ') % example 1
     OpenThisFile(' ') % example 2
-
-    % Close this file
+    
+    % run files
+    RunThisFile(' ') % file 1
+    RunThisFile(' ') % file 2
+    
+    % close this file
     CloseThisFile(mfilename) % this will close this file
 
 end
@@ -91,6 +98,31 @@ function RequiredWebZips
     disp(' ')
 end
 %--------------------------------------------------------------------------
+function MinimumVersionChecks
+    disp('--- Checking toolbox versions')
+
+    % initialize index
+    ind = 0;
+
+    % initialize structure
+    test = struct('toolbox','','version','');
+
+    % test 1
+%   ind = ind + 1; % increment
+%   test(ind).toolbox = '';
+%   test(ind).version = '';
+
+    % test 2
+%   ind = ind + 1; % increment
+%   test(ind).toolbox = '';
+%   test(ind).version = '';
+
+    % download and unzip
+    VersionChecks(test)
+
+    disp(' ')
+end
+%--------------------------------------------------------------------------
 function AddSubmissionContents(name)
     disp('--- Adding submission contents to path')
     disp(' ')
@@ -103,6 +135,19 @@ function AddSubmissionContents(name)
 
     % add folders and subfolders to path
     addpath(genpath(submissiondir)) 
+end
+%--------------------------------------------------------------------------
+function RunThisFile(name)
+	disp(['--- Running ', name])
+
+	try
+	    % run the file
+	    run(name);
+	catch % error
+	    disp(['Could not run ', name])
+	end
+
+	disp(' ')
 end
 %--------------------------------------------------------------------------
 function CloseThisFile(name)
@@ -259,4 +304,40 @@ function DownloadWebZips(zips,outputdir)
     
     % change back to the original directory
     cd(olddir)
+end
+%--------------------------------------------------------------------------
+function VersionChecks(test)
+    
+    % initialize counter
+    counter = 0;
+
+    % go through each file
+    for k = 1:length(test)       
+        try
+            if verLessThan(test(k).toolbox,test(k).version) % failed
+                % output to the command window
+                disp(['Failed: ',test(k).toolbox,' -v', test(k).version])
+
+            else % passed
+                % output to the command window
+                disp(['Passed: ',test(k).toolbox,' -v', test(k).version])
+                counter = counter + 1;
+                
+            end
+            
+        catch % failed to check the toolbox
+            % output to the command window
+            disp(['Failed to check toolbox: ', test(k).toolbox])
+            
+        end
+        
+    end
+    
+    % check if all tests were passed
+    if counter == length(test) % successful
+        disp('All version checks passed')
+    else % failure
+        warning('Not all version checks were successful')
+    end
+    
 end

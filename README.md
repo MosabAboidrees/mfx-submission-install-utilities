@@ -29,7 +29,9 @@ The goal of this project is to make it as simple as possible for a user to get y
 - Only a single file is needed for installation. No other functions to keep track of (simpler for users and cleaner repositories).
 - Automatically add the project files to the user's path
 - Automatically download the dependencies from the web
+- Check if toolboxes are installed and minimum versions are met
 - Open specific files (such as examples)
+- Run specific files (such as examples)
 - Close specific files (such as the INSTALL file when it has completed)
 - Display diagnostic information to the command window 
 - Customizable since no two projects are the same
@@ -39,17 +41,16 @@ The goal of this project is to make it as simple as possible for a user to get y
 Below is a list of the included utilities that help achieve the goals listed above. This functions are directly included as subfunctions in the INSTALL file.
 - [AddSubmissionContents](src/funcs/AddSubmissionContents.m): Adds all the contents of the current folder and subfolders relative to the file the function is called from
 - [OpenThisFile](src/funcs/OpenThisFile.m): Opens a specified m file
+- [RunThisFile](src/funcs/RunThisFile.m): Runs a specified m file
 - [CloseThisFile](src/funcs/CloseThisFile.m): Closes a specified m file
 - [RequiredWebFiles](src/funcs/RequiredWebFiles.m) and [DownloadWebFiles](src/funcs/DownloadWebFiles.m): Downloads files from the web to specified location
 - [RequiredWebZips](src/funcs/RequiredWebZips.m) and [DownloadWebZips](src/funcs/DownloadWebZips.m): Downloads and extracts zips files from the web to specified location
 	- You no longer need to directly include required MFX and GitHub projects!
+- [MinimumVersionChecks](src/funcs/MinimumVersionChecks.m) and [VersionChecks](src/funcs/VersionChecks.m): Checks if a list of toolboxes satisfies version checks
 
 #### Custom INSTALL tasks
 
 - Check if your Python environment and packages are installed and working (see [link](https://github.com/danielrherber/pm-architectures-project/blob/master/INSTALL_PM_Architectures_Project.m))
-- [TODO] Check to make sure the version of MATLAB is appropriate
-- [TODO] Check if the required toolboxes are installed
-- [TODO] Run a specific file
 
 #### Example 
 ![install_example.gif](http://www.danielherber.com/img/projects/mfx-submission-install-utilities/install_example.gif)
@@ -74,4 +75,4 @@ Perhaps future versions could include some of these efforts to improve certain e
 
 #### Project Links
 - [https://github.com/danielrherber/mfx-submission-install-utilities](https://github.com/danielrherber/mfx-submission-install-utilities)
-- [http://www.mathworks.com/matlabcentral/fileexchange/XXXXX](http://www.mathworks.com/matlabcentral/fileexchange/XXXXX)
+- [http://www.mathworks.com/matlabcentral/fileexchange/62651](http://www.mathworks.com/matlabcentral/fileexchange/62651)
